@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,13 @@ Route::prefix('blog')->name('blog.')->group(function(){
     Route::get('contact', [BlogController::class, 'contact'])->name('contact');
     Route::get('post', [BlogController::class, 'post'])->name('post');
 });
+
+Route::get('form1', [FormController::class, 'form1'])->name('form1');
+Route::post('form1', [FormController::class, 'form1_data'])->name('form1_data');
+
+Route::get('/form5', [FormController::class, 'form5'])->name('form5');
+Route::post('/form5', [FormController::class, 'form5_data'])->name('form5_data');
+
+Route::get('/form3', [FormController::class, 'form3'])->name('form3');
+Route::post('/form3', [FormController::class, 'form3_data'])->name('form3_data');
+
